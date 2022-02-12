@@ -7,6 +7,23 @@
 #include <sstream>
 #include "sensor_msgs/MagneticField.h"
 
+/* AK8963 registers */
+#define  AK8963_I2C_ADDR_ 0x0C;
+#define AK8963_ST1_ 0x02;
+#define AK8963_DATA_RDY_INT_ 0x01;
+#define AK8963_HXL_ 0x03;
+#defineAK8963_CNTL1_ 0x0A;
+#defineAK8963_PWR_DOWN_ 0x00;
+#defineAK8963_CNT_MEAS1_ 0x12;
+#define AK8963_CNT_MEAS2_ 0x16;
+#define AK8963_FUSE_ROM_ 0x0F;
+#defineAK8963_CNTL2_ 0x0B;
+#defineAK8963_RESET_ 0x01;
+#define AK8963_ASA_ 0x10;
+#define AK8963_WHOAMI_ 0x00;
+#define AK8963_HOFL_ 0x08;
+
+
 int main(int argc, char **argv){
 
   ros::init(argc, argv, "IMU_pub");
