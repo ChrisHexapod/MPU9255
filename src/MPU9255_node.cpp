@@ -31,8 +31,9 @@ int main(int argc, char **argv){
   ros::NodeHandle n;
   ros::Publisher pub_imu = n.advertise<sensor_msgs::Imu>("imu/data_raw", 2);
   ros::Publisher pub_mag = n.advertise<sensor_msgs::MagneticField>("imu/mag", 2);
+  ros::Rate rate(50); // ROS Rate at 50Hz
 
-        int fd,fe;
+  int fd,fe;
   wiringPiSetupSys();
   fd = wiringPiI2CSetup(0x68);
 
